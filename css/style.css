@@ -1,0 +1,558 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #000000;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #68877F;
+  text-decoration: none;
+  font-size: 30px;
+  padding: 5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-family: "Handjet", sans-serif;
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  background-color: #577069;
+  border-radius: 4px;
+}
+
+nav ul li a.active {
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #68877F;
+  border-radius: 4px;
+}
+
+/* Logo Style (Navigation) */
+nav ul li:first-child a {
+  font-size: 40px;
+  font-family: "Handjet", sans-serif;
+  font-weight: 900;
+  color: #68877F;
+}
+
+nav ul li:first-child a:hover {
+  color: #ffffff;
+}
+
+/* Main Content */
+main {
+  padding: 20px;
+}
+
+section {
+  padding: 60px 20px;
+  border-bottom: 1px solid #333333;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #B7BAC6;
+  color: #000;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-family: "Handjet", sans-serif;
+}
+
+.footer-logo:hover {
+  text-decoration: underline;
+}
+
+.footer-content p a {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-content p a:hover {
+  text-decoration: underline;
+}
+
+/* Gallery and Media */
+.gallery-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery-row figure {
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.gallery-row img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #333;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Meet the Team Heading */
+.meet-heading {
+  text-align: center;
+  font-size: 60px;
+  font-family: "Handjet", sans-serif;
+  font-weight: 800;
+  animation: fadeInUp 1.2s ease forwards;
+  opacity: 0;
+  margin-bottom: 40px;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.team-member {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #444;
+}
+
+.team-member h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: "Handjet", sans-serif;
+  color: #ffffff;
+}
+
+.team-member p {
+  font-size: 16px;
+  color: #cccccc;
+  line-height: 1.4;
+}
+
+/* Apply Handjet Font to Key Elements */
+.navbar-title,
+#hero h1,
+#hero p,
+#game-info h2,
+.meet-heading,
+.footer-logo {
+  font-family: "Handjet", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Hero Section */
+#hero {
+  background: url('../images/MMBackground.PNG') no-repeat center center;
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+#hero h1 {
+  font-size: 72px;
+  font-weight: 800;
+  font-family: "Handjet", sans-serif;
+}
+
+#hero p {
+  font-size: 28px;
+  font-family: "Handjet", sans-serif;
+  margin: 10px 0;
+}
+
+#hero button {
+  background-color: #68877F;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#hero button:hover {
+  background-color: #577069;
+}
+
+/* Trailer Section */
+#trailer-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #111;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.trailer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.trailer-placeholder {
+  width: 700px;
+  height: 400px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+/* Xylon Image */
+#xylon-container {
+  position: absolute;
+  left: 100px;
+  bottom: -100px;
+}
+
+#xylon-image {
+  width: 300px;
+  height: auto;
+}
+
+/* Game Info Section */
+#game-info {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+#game-info h2 {
+  font-size: 48px;
+  font-family: "Handjet", sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#game-info p {
+  font-size: 22px;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 48px;
+  }
+
+  #hero p {
+    font-size: 20px;
+  }
+
+  #game-info h2 {
+    font-size: 32px;
+  }
+
+  #game-info p {
+    font-size: 18px;
+  }
+
+  nav ul li:first-child a {
+    font-size: 30px;
+  }
+
+  .footer-logo {
+    font-size: 28px;
+  }
+}
+
+/* Fix Trailer Section Layout */
+#trailer-section {
+  padding: 50px 20px;
+  background-color: #111;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#trailer-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 36px;
+}
+
+/* Flex layout for trailer + Xylon */
+.trailer-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Adjust existing trailer container */
+.trailer-container {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.trailer-placeholder {
+  width: 100%;
+  max-width: 700px;
+  height: 400px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+/* Xylon image beside trailer */
+#xylon-container {
+  flex: 0 0 250px;
+  text-align: center;
+}
+
+#xylon-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+/* Remove conflicting absolute positioning */
+#xylon-container,
+#xylon-image {
+  position: static !important;
+}
+
+/* Trailer Section */
+#trailer-section {
+  padding: 50px 20px;
+  background-color: #111;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#trailer-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 36px;
+  width: 100%;
+}
+
+/* Flex layout for Xylon, Trailer, and FinWave */
+.trailer-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Xylon on the left */
+#xylon-container {
+  flex: 0 0 250px;
+  text-align: center;
+}
+
+/* FinWave on the right */
+#finwave-container {
+  flex: 0 0 200px;
+  text-align: center;
+}
+
+#xylon-image,
+#finwave-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+/* Middle trailer box */
+.trailer-container {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.trailer-placeholder {
+  width: 100%;
+  max-width: 700px;
+  height: 400px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+/* Biome Page Styling */
+.biome-heading {
+  text-align: center;
+  font-size: 48px;
+  font-family: "Handjet", sans-serif;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.biome-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.biome-card {
+  background-color: #111;
+  border: 2px solid #444;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.biome-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.biome-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.biome-card h2 {
+  font-size: 28px;
+  color: #ffffff;
+  margin: 15px 0 5px;
+  font-family: "Handjet", sans-serif;
+}
+
+.biome-card p {
+  font-size: 18px;
+  color: #cccccc;
+  padding: 0 20px 20px;
+}
+
+/* Characters Page */
+.character-heading {
+  text-align: center;
+  font-size: 48px;
+  font-family: "Handjet", sans-serif;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.character-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.character-card {
+  background-color: #111;
+  border: 2px solid #444;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.character-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.character-card h2 {
+  font-size: 28px;
+  color: #ffffff;
+  margin: 15px 0 5px;
+  font-family: "Handjet", sans-serif;
+}
+
+.character-card p {
+  font-size: 18px;
+  color: #cccccc;
+  padding: 0 20px 20px;
+}
