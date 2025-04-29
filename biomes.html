@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Noctarion - Biomes/Levels</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" media="all" />
+  <style>
+    nav ul li a {
+      font-family: "Handjet", sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Noctarion</a></li>
+        <li><a href="index.html#game-info">Game Info</a></li>
+        <li><a href="characters.html">Characters</a></li>
+        <li><a href="biomes.html" class="active">Biomes/Levels</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="wishlist.html">Wishlist/Newsletter</a></li>
+        <li><a href="playdownload.html">Play/Download</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+  <h1 class="biome-heading" style="text-align: center; font-family: 'Handjet', sans-serif; font-size: 48px; color: #ffffff; margin: 30px 0;">
+    Explore the Biomes of Noctarion
+  </h1>
+
+  <section class="biome-gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 20px;">
+    
+    <!-- Biome 1 -->
+    <div class="biome-card" style="max-width: 400px; text-align: center;">
+      <img src="images/BiomeOne.3.png" alt="A scrappy wasteland scattered with rusted iron, tangled wires, and broken tech. Navigate dim skies and dig through tungsten-rich debris for valuable parts." style="width: 100%; border-radius: 8px; cursor: pointer;">
+      <h2 style="font-family: 'Handjet', sans-serif; font-size: 28px; color: #ffffff; margin-top: 15px;">Biome One</h2>
+      <p style="color: #cccccc; font-family: Arial, sans-serif;">
+        A scrappy wasteland scattered with rusted iron, tangled wires, and broken tech. Navigate dim skies and dig through tungsten-rich debris for valuable parts.
+      </p>
+    </div>
+
+    <!-- Biome 2 -->
+    <div class="biome-card" style="max-width: 400px; text-align: center;">
+      <img src="images/BiomeTwo.1.png" alt="A brighter landscape of cracked circuit boards and sandy terrain. Explore tan-green plains dotted with computer chip relics and tech ruins." style="width: 100%; border-radius: 8px; cursor: pointer;">
+      <h2 style="font-family: 'Handjet', sans-serif; font-size: 28px; color: #ffffff; margin-top: 15px;">Biome Two</h2>
+      <p style="color: #cccccc; font-family: Arial, sans-serif;">
+        A brighter landscape of cracked circuit boards and sandy terrain. Explore tan-green plains dotted with computer chip relics and tech ruins.
+      </p>
+    </div>
+
+    <!-- Biome 3 -->
+    <div class="biome-card" style="max-width: 400px; text-align: center;">
+      <img src="images/BiomeThree.1.png" alt="A shadowy, metallic valley pulsing with stored energy. Lithium-rich grounds and scattered batteries set the stage for your final challenge." style="width: 100%; border-radius: 8px; cursor: pointer;">
+      <h2 style="font-family: 'Handjet', sans-serif; font-size: 28px; color: #ffffff; margin-top: 15px;">Biome Three</h2>
+      <p style="color: #cccccc; font-family: Arial, sans-serif;">
+        A shadowy, metallic valley pulsing with stored energy. Lithium-rich grounds and scattered batteries set the stage for your final challenge.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- Modal for Enlarged Biome Images -->
+  <div id="biomeModal" class="modal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); justify-content: center; align-items: center; flex-direction: column; padding: 20px;">
+    <span class="close" onclick="document.getElementById('biomeModal').style.display='none'" style="position: absolute; top: 20px; right: 30px; font-size: 40px; font-weight: bold; color: red; cursor: pointer;">&times;</span>
+    <img id="biomeModalImg" class="modal-content" style="max-width: 90%; max-height: 80%; border: 4px solid #fff; border-radius: 6px;">
+    <div id="biomeModalCaption" style="color: #fff; font-size: 18px; margin-top: 15px; text-align: center; font-family: 'Handjet', sans-serif;"></div>
+  </div>
+</main>
+
+<script>
+  document.querySelectorAll('.biome-card img').forEach(img => {
+    img.addEventListener('click', () => {
+      document.getElementById('biomeModalImg').src = img.src;
+      document.getElementById('biomeModalCaption').textContent = img.alt;
+      document.getElementById('biomeModal').style.display = 'flex';
+    });
+  });
+</script>
+
+  <footer>
+  <div class="footer-content">
+    <a href="index.html" class="footer-logo">Noctarion</a>
+    <p>
+      <a href="team.html">Team/Developers</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>
+

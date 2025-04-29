@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" media="all" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Noctarion - Home & Game Info</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    #trailer-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+    .trailer-container {
+      flex: 1;
+      min-width: 300px;
+    }
+    #xylon-container {
+      flex: 0 0 250px;
+      text-align: center;
+    }
+    #xylon-image {
+      max-width: 100%;
+      height: auto;
+    }
+    #trailer-section h2 {
+      font-family: "Handjet", sans-serif;
+    }
+    #game-info h2 {
+      font-size: 40px;
+      font-family: "Handjet", sans-serif;
+      color: #ffffff;
+      text-align: center;
+    }
+    #game-info p {
+      font-size: 22px;
+      text-align: center;
+      color: #cccccc;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-family: Arial, sans-serif;
+    }
+    .explore-more {
+      text-align: center;
+      margin-top: 60px;
+    }
+    .explore-more h2 {
+      font-family: "Handjet", sans-serif;
+      font-size: 42px;
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+    .explore-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .explore-links a {
+      font-family: "Handjet", sans-serif;
+      font-size: 30px;
+      background-color: #68877F;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .explore-links a:hover {
+      background-color: #577069;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#hero">Noctarion</a></li>
+        <li><a href="#game-info">Game Info</a></li>
+        <li><a href="characters.html">Characters</a></li>
+        <li><a href="biomes.html">Biomes/Levels</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="wishlist.html">Wishlist/Newsletter</a></li>
+        <li><a href="playdownload.html">Play/Download</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <h1>Noctarion</h1>
+      <p>Fight enemy robots on their planet to gather parts for your robot in hopes of escaping!</p>
+      <p>Fight! Craft! Escape!</p>
+      <button onclick="window.location.href='playdownload.html'">Play Now</button>
+      <button onclick="window.location.href='wishlist.html'">Wishlist</button>
+    </section>
+
+    <section id="trailer-section">
+      <h2>Explore Noctarion: A Dark, Metal World</h2>
+      <div class="trailer-flex">
+        <div id="xylon-container">
+          <img src="images/XylonThumbsUp.png" alt="Xylon giving thumbs up" id="xylon-image">
+        </div>
+        <div class="trailer-container">
+          <div class="trailer-placeholder"></div>
+        </div>
+        <div id="finwave-container">
+          <img src="images/FinWave.png" alt="FinWave the helper bot" id="finwave-image">
+        </div>
+      </div>
+    </section>
+
+    <section id="game-info">
+      <h2>Game Info</h2>
+      <p>
+        You are an astronaut who crash-landed on Noctarion, a tech-infused planet overrun by corrupted robots.
+        Your mission: Gather materials, craft companions, and fight your way to escape.
+        Features: Turn-based combat, crafting, and 3rd-person exploration.
+      </p>
+    </section>
+
+    <section class="explore-more">
+      <h2>EXPLORE MORE!</h2>
+      <div class="explore-links">
+        <a href="characters.html">CHARACTERS!</a>
+        <a href="biomes.html">BIOMES/LEVELS!</a>
+        <a href="media.html">EXTRA MEDIA!</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <a href="index.html" class="footer-logo">Noctarion</a>
+      <p><a href="team.html">Team/Developers</a></p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const hash = window.location.hash;
+      if (hash) {
+        setTimeout(() => {
+          const target = document.querySelector(hash);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Noctarion - Media</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" media="all" />
+  <style>
+    .carousel-wrapper {
+      overflow-x: auto;
+      overflow-y: hidden;
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+    .carousel-track {
+      display: flex;
+    }
+    .carousel-image {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin: 0 5px;
+      cursor: pointer;
+      border: 2px solid #333;
+      border-radius: 6px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .arrow {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 1;
+    }
+    .arrow-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      gap: 10px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .modal-content {
+      max-width: 90%;
+      max-height: 80%;
+      border: 4px solid #fff;
+      border-radius: 6px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      font-weight: bold;
+      color: red;
+      cursor: pointer;
+      z-index: 10000;
+    }
+    #modal-caption {
+      color: #fff;
+      font-size: 18px;
+      margin-top: 15px;
+      text-align: center;
+    }
+.media-subheading {
+  font-family: "Handjet", sans-serif;
+  font-size: 48px;
+  text-align: center;
+  margin: 30px 0 10px;
+  color: #ffffff;
+}
+
+.media-section h3 {
+  font-family: "Handjet", sans-serif;
+  font-size: 32px;
+  color: #ffffff;
+  margin: 20px 0 10px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Noctarion</a></li>
+        <li><a href="index.html#game-info">Game Info</a></li>
+        <li><a href="characters.html">Characters</a></li>
+        <li><a href="biomes.html">Biomes/Levels</a></li>
+        <li><a href="media.html" class="active">Media</a></li>
+        <li><a href="wishlist.html">Wishlist/Newsletter</a></li>
+        <li><a href="playdownload.html">Play/Download</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 class="media-subheading">Media Gallery</h2>
+
+    <!-- In-Game Screenshots -->
+    <section class="media-section">
+      <h3>In-Game Screenshots</h3>
+      <div class="arrow-container">
+        <button class="arrow" onclick="scrollCarousel('screenshots', -1)">&#10094;</button>
+        <div class="carousel-wrapper" id="screenshots-wrapper">
+          <div class="carousel-track" id="screenshots-track"></div>
+        </div>
+        <button class="arrow" onclick="scrollCarousel('screenshots', 1)">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Concept Art Section -->
+    <section class="media-section">
+      <h3>Concept Art</h3>
+      <div class="arrow-container">
+        <button class="arrow" onclick="scrollCarousel('concepts', -1)">&#10094;</button>
+        <div class="carousel-wrapper" id="concepts-wrapper">
+          <div class="carousel-track" id="concepts-track"></div>
+        </div>
+        <button class="arrow" onclick="scrollCarousel('concepts', 1)">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modal-image">
+      <div id="modal-caption"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <a href="index.html" class="footer-logo">Noctarion</a>
+      <p><a href="team.html">Team/Developers</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const screenshots = [
+      "images/BiomeOne.png", "images/BiomeOne.1.png", "images/BiomeOne.2.png", "images/BiomeOne.3.png",
+      "images/BiomeTwo.png", "images/BiomeTwo.1.png", "images/BiomeTwo.2.png", "images/BiomeTwo.3.png",
+      "images/BiomeThree.png", "images/BiomeThree.1.png", "images/BiomeThree.2.png", "images/BiomeThree.3.png"
+    ];
+
+    const conceptArt = [
+      "images/NoctarionMoodBoard.png", "images/NoctarionFirstBiome.webp", "images/NoctarionSecondBiome.webp",
+      "images/NoctarionThirdBiome.webp", "images/Xylon.jpg", "images/Xylon_sWorkbench.webp",
+      "images/LongRangeBot.png", "images/ShortRangeBot.png", "images/TankBot.png",
+      "images/NoctarionLaserGun.webp", "images/NoctarionSpaceShuttle.png"
+    ];
+
+    function loadGallery(trackId, imageArray) {
+      const track = document.getElementById(trackId);
+      imageArray.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = src.split("/").pop().split(".")[0].replace(/[-_]/g, " ");
+        img.className = "carousel-image";
+        img.addEventListener("click", () => {
+          document.getElementById("modal").style.display = "flex";
+          document.getElementById("modal-image").src = img.src;
+          document.getElementById("modal-caption").textContent = img.alt;
+        });
+        track.appendChild(img);
+      });
+    }
+
+    function scrollCarousel(type, direction) {
+      const wrapper = document.getElementById(`${type}-wrapper`);
+      wrapper.scrollBy({ left: direction * 210, behavior: 'smooth' });
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    loadGallery("screenshots-track", screenshots);
+    loadGallery("concepts-track", conceptArt);
+  </script>
+</body>
+</html>
+
