@@ -13,62 +13,77 @@
     html {
       scroll-behavior: smooth;
     }
-    .menu-toggle {
-      display: none;
-      font-size: 32px;
-      color: #fff;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      font-family: "Handjet", sans-serif;
-    }
-    nav ul {
-      list-style: none;
+    #trailer-section {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
       flex-wrap: wrap;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
+      padding: 20px;
     }
-    nav ul li {
-      margin: 10px;
+    .trailer-container {
+      flex: 1;
+      min-width: 300px;
     }
-    nav ul li a {
+    #xylon-container {
+      flex: 0 0 250px;
+      text-align: center;
+    }
+    #xylon-image {
+      max-width: 100%;
+      height: auto;
+    }
+    #trailer-section h2 {
       font-family: "Handjet", sans-serif;
-      font-size: 20px;
-      color: #68877F;
-      text-decoration: none;
-      padding: 6px;
     }
-    nav ul li a:hover {
+    #game-info h2 {
+      font-size: 40px;
+      font-family: "Handjet", sans-serif;
       color: #ffffff;
+      text-align: center;
     }
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background-color: #000;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-      }
-      nav ul.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: block;
-        margin: 10px auto;
-      }
+    #game-info p {
+      font-size: 22px;
+      text-align: center;
+      color: #cccccc;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-family: Arial, sans-serif;
     }
-    /* Existing styles omitted for brevity */
+    .explore-more {
+      text-align: center;
+      margin-top: 60px;
+    }
+    .explore-more h2 {
+      font-family: "Handjet", sans-serif;
+      font-size: 42px;
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+    .explore-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .explore-links a {
+      font-family: "Handjet", sans-serif;
+      font-size: 30px;
+      background-color: #68877F;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .explore-links a:hover {
+      background-color: #577069;
+    }
   </style>
 </head>
 <body>
   <header>
-    <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰ Menu</button>
     <nav>
       <ul>
         <li><a href="#hero">Noctarion</a></li>
