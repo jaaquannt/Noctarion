@@ -100,51 +100,52 @@
   </footer>
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyAOWMEge9Nyzu-4gkVcOKVggSy2JYNlFQI",
-      authDomain: "noctarion-comments.firebaseapp.com",
-      projectId: "noctarion-comments",
-      storageBucket: "noctarion-comments.firebasestorage.app",
-      messagingSenderId: "309987603444",
-      appId: "1:309987603444:web:e381b4b5c35d422764bfa1"
-    };
+  const firebaseConfig = {
+    apiKey: "AIzaSyDfdVeRqCKnh3cytu0XdxpTkNp1gAGgNt8",
+    authDomain: "noctarion-comments.firebaseapp.com",
+    projectId: "noctarion-comments",
+    storageBucket: "noctarion-comments.firebasestorage.app",
+    messagingSenderId: "309987603444",
+    appId: "1:309987603444:web:e381b4b5c35d422764bfa1"
+  };
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
-    const commentBox = document.getElementById("comment-text");
-    const commentList = document.getElementById("comments-list");
+  const commentBox = document.getElementById("comment-text");
+  const commentList = document.getElementById("comments-list");
 
-    // Submit comment and save to Firestore
-    document.querySelector(".comment-box button").addEventListener("click", async () => {
-      const text = commentBox.value.trim();
-      if (text) {
-        await addDoc(collection(db, "comments"), {
-          message: text,
-          timestamp: new Date()
-        });
-        commentBox.value = "";
-      } else {
-        alert("Please write something before submitting!");
-      }
-    });
-
-    // Load and display comments in real time
-    const q = query(collection(db, "comments"), orderBy("timestamp", "desc"));
-    onSnapshot(q, (snapshot) => {
-      commentList.innerHTML = "";
-      snapshot.forEach(doc => {
-        const p = document.createElement("p");
-        p.textContent = doc.data().message;
-        p.style.color = "#cccccc";
-        p.style.fontFamily = "Arial, sans-serif";
-        p.style.marginBottom = "15px";
-        commentList.appendChild(p);
+  // Submit comment and save to Firestore
+  document.querySelector(".comment-box button").addEventListener("click", async () => {
+    const text = commentBox.value.trim();
+    if (text) {
+      await addDoc(collection(db, "comments"), {
+        message: text,
+        timestamp: new Date()
       });
+      commentBox.value = "";
+    } else {
+      alert("Please write something before submitting!");
+    }
+  });
+
+  // Load and display comments in real time
+  const q = query(collection(db, "comments"), orderBy("timestamp", "desc"));
+  onSnapshot(q, (snapshot) => {
+    commentList.innerHTML = "";
+    snapshot.forEach(doc => {
+      const p = document.createElement("p");
+      p.textContent = doc.data().message;
+      p.style.color = "#cccccc";
+      p.style.fontFamily = "Arial, sans-serif";
+      p.style.marginBottom = "15px";
+      commentList.appendChild(p);
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
