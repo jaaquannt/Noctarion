@@ -85,53 +85,25 @@
       margin-top: 15px;
       text-align: center;
     }
-    .media-subheading {
-      font-family: "Handjet", sans-serif;
-      font-size: 48px;
-      text-align: center;
-      margin: 30px 0 10px;
-      color: #ffffff;
-    }
-    .media-section h3 {
-      font-family: "Handjet", sans-serif;
-      font-size: 32px;
-      color: #ffffff;
-      margin: 20px 0 10px;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 32px;
-      color: #fff;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      font-family: "Handjet", sans-serif;
-    }
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        background-color: #000;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-      }
-      nav ul.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: block;
-        margin: 10px auto;
-      }
-    }
+.media-subheading {
+  font-family: "Handjet", sans-serif;
+  font-size: 48px;
+  text-align: center;
+  margin: 30px 0 10px;
+  color: #ffffff;
+}
+
+.media-section h3 {
+  font-family: "Handjet", sans-serif;
+  font-size: 32px;
+  color: #ffffff;
+  margin: 20px 0 10px;
+}
+
   </style>
 </head>
 <body>
   <header>
-    <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰ Menu</button>
     <nav>
       <ul>
         <li><a href="index.html">Noctarion</a></li>
@@ -218,7 +190,7 @@
     }
 
     function scrollCarousel(type, direction) {
-      const wrapper = document.getElementById(`${type}-wrapper`);
+      const wrapper = document.getElementById(${type}-wrapper);
       wrapper.scrollBy({ left: direction * 210, behavior: 'smooth' });
     }
 
@@ -231,4 +203,3 @@
   </script>
 </body>
 </html>
-
