@@ -11,10 +11,40 @@
     nav ul li a {
       font-family: "Handjet", sans-serif;
     }
+    .menu-toggle {
+      display: none;
+      font-size: 32px;
+      color: #fff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      font-family: "Handjet", sans-serif;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+        margin: 10px auto;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
+    <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰ Menu</button>
     <nav>
       <ul>
         <li><a href="index.html">Noctarion</a></li>
@@ -29,25 +59,24 @@
   </header>
 
   <main style="text-align: center; padding: 60px 20px;">
-  <h1 style="font-family: 'Handjet', sans-serif; font-size: 60px; color: #ffffff; margin-bottom: 30px;">Play / Download</h1>
+    <h1 style="font-family: 'Handjet', sans-serif; font-size: 60px; color: #ffffff; margin-bottom: 30px;">Play / Download</h1>
 
-  <p style="font-family: 'Handjet', sans-serif; font-size: 36px; color: #ff5555; margin-bottom: 40px;">
-    COMING SOON...
-  </p>
+    <p style="font-family: 'Handjet', sans-serif; font-size: 36px; color: #ff5555; margin-bottom: 40px;">
+      COMING SOON...
+    </p>
 
-  <a href="#" style="font-family: 'Handjet', sans-serif; font-size: 32px; background-color: #68877F; color: white; padding: 14px 30px; border-radius: 8px; text-decoration: none; transition: background-color 0.3s ease;">
-    Play Now!
-  </a>
-</main>
+    <a href="#" style="font-family: 'Handjet', sans-serif; font-size: 32px; background-color: #68877F; color: white; padding: 14px 30px; border-radius: 8px; text-decoration: none; transition: background-color 0.3s ease;">
+      Play Now!
+    </a>
+  </main>
 
   <footer>
-  <div class="footer-content">
-    <a href="index.html" class="footer-logo">Noctarion</a>
-    <p>
-      <a href="team.html">Team/Developers</a>
-    </p>
-  </div>
-</footer>
+    <div class="footer-content">
+      <a href="index.html" class="footer-logo">Noctarion</a>
+      <p>
+        <a href="team.html">Team/Developers</a>
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
-
