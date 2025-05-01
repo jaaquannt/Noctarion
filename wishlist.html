@@ -72,64 +72,51 @@
   </header>
 
   <main>
-  <h1>Wishlist & Newsletter</h1>
+    <h1>Wishlist & Newsletter</h1>
 
-  <div class="coming-soon">COMING SOON...</div>
+    <div class="coming-soon">COMING SOON...</div>
 
-  <div class="newsletter-signup">
-    <input type="email" id="newsletter-email" placeholder="Enter your email to stay updated!">
-    <button onclick="submitEmail()">Sign Up</button>
-  </div>
+    <!-- ✅ Live Formspree Newsletter Form -->
+    <form action="https://formspree.io/f/mdkgavkk" method="POST" class="newsletter-signup">
+      <input type="email" name="email" placeholder="Enter your email to stay updated!" required>
+      <button type="submit">Sign Up</button>
+    </form>
 
-  <div class="comment-box">
-    <textarea id="comment-text" rows="4" placeholder="Leave a comment or feedback!"></textarea>
-    <button onclick="submitComment()">Submit</button>
-  </div>
+    <div class="comment-box">
+      <textarea id="comment-text" rows="4" placeholder="Leave a comment or feedback!"></textarea>
+      <button onclick="submitComment()">Submit</button>
+    </div>
 
-  <div id="comments-section" style="margin-top: 40px;">
-    <h2 style="font-family: 'Handjet', sans-serif; font-size: 36px; color: #ffffff;">Community Comments</h2>
-    <div id="comments-list" style="margin-top: 20px;"></div>
-  </div>
-</main>
-
+    <div id="comments-section" style="margin-top: 40px;">
+      <h2 style="font-family: 'Handjet', sans-serif; font-size: 36px; color: #ffffff;">Community Comments</h2>
+      <div id="comments-list" style="margin-top: 20px;"></div>
+    </div>
+  </main>
 
   <footer>
     <div class="footer-content">
       <a href="index.html" class="footer-logo">Noctarion</a>
-      <p>
-        <a href="team.html">Team/Developers</a>
-      </p>
+      <p><a href="team.html">Team/Developers</a></p>
     </div>
   </footer>
 
-<script>
-  function submitEmail() {
-    const emailInput = document.getElementById('newsletter-email').value;
-    if (emailInput) {
-      alert("Thanks for signing up, " + emailInput + "!");
-      document.getElementById('newsletter-email').value = '';
-    } else {
-      alert("Please enter a valid email!");
+  <script>
+    function submitComment() {
+      const commentInput = document.getElementById('comment-text').value;
+      if (commentInput) {
+        const commentList = document.getElementById('comments-list');
+        const newComment = document.createElement('p');
+        newComment.textContent = commentInput;
+        newComment.style.color = '#cccccc';
+        newComment.style.fontFamily = 'Arial, sans-serif';
+        newComment.style.marginBottom = '15px';
+        commentList.appendChild(newComment);
+        document.getElementById('comment-text').value = '';
+      } else {
+        alert("Please write something before submitting!");
+      }
     }
-  }
-
-  function submitComment() {
-    const commentInput = document.getElementById('comment-text').value;
-    if (commentInput) {
-      const commentList = document.getElementById('comments-list');
-      const newComment = document.createElement('p');
-      newComment.textContent = commentInput;
-      newComment.style.color = '#cccccc';
-      newComment.style.fontFamily = 'Arial, sans-serif';
-      newComment.style.marginBottom = '15px';
-      commentList.appendChild(newComment);
-      document.getElementById('comment-text').value = '';
-    } else {
-      alert("Please write something before submitting!");
-    }
-  }
-</script>
-
+  </script>
 </body>
 </html>
 
