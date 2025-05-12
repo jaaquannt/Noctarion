@@ -11,6 +11,30 @@
     nav ul li a {
       font-family: "Handjet", sans-serif;
     }
+
+    .download-button {
+      font-family: 'Handjet', sans-serif;
+      font-size: 32px;
+      background-color: #68877F;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      margin-top: 30px;
+    }
+
+    .download-button:hover {
+      background-color: #4e665f;
+    }
+
+    .warning {
+      font-family: 'Handjet', sans-serif;
+      font-size: 28px;
+      color: #ff5555;
+      margin-bottom: 30px;
+    }
   </style>
 </head>
 <body>
@@ -29,24 +53,22 @@
   </header>
 
   <main style="text-align: center; padding: 60px 20px;">
-  <h1 style="font-family: 'Handjet', sans-serif; font-size: 60px; color: #ffffff; margin-bottom: 30px;">Play / Download</h1>
+    <h1 style="font-family: 'Handjet', sans-serif; font-size: 60px; color: #ffffff; margin-bottom: 30px;">Play / Download</h1>
 
-  <p style="font-family: 'Handjet', sans-serif; font-size: 36px; color: #ff5555; margin-bottom: 40px;">
-    COMING SOON...
-  </p>
+    <p class="warning">
+      ⚠️ This version does <strong>not</strong> include a save function. Progress will be lost if you exit the game.
+    </p>
 
-  <a href="#" style="font-family: 'Handjet', sans-serif; font-size: 32px; background-color: #68877F; color: white; padding: 14px 30px; border-radius: 8px; text-decoration: none; transition: background-color 0.3s ease;">
-    Play Now!
-  </a>
-</main>
+    <a href="Noctarion.exe" download class="download-button">
+      Download Noctarion (.exe)
+    </a>
+  </main>
 
   <footer>
-  <div class="footer-content">
-    <a href="index.html" class="footer-logo">Noctarion</a>
-    <p>
-      <a href="team.html">Team/Developers</a>
-    </p>
-  </div>
-</footer>
+    <div class="footer-content">
+      <a href="index.html" class="footer-logo">Noctarion</a>
+      <p><a href="team.html">Team/Developers</a></p>
+    </div>
+  </footer>
 </body>
 </html>
